@@ -20,6 +20,7 @@ class Request extends React.Component {
    status: "pending"
 }
 
+
  handleChange = event => {
     console.log(`${event.target.name}: ${event.target.value}`);
     this.setState({
@@ -43,18 +44,26 @@ class Request extends React.Component {
       console.log(respData)
       this.props.createNewAppointment(respData)
       this.props.history.push('/appointments')
-
     })
  }
+
+ 
+
+ 
+ style = {
+  width: '500px', 
+  maxWidth: '100%',
+  boxShadow: '0 50px 70px -20px rgba(0, 0, 0, 0.8)'
+}
 
 
   render() {
     //const { location, width, height, colors, comments} = this.history.state.state
     //console.log(this.props.location.state.detail);
         return (<div>
-          <h1>Request Appointment</h1>
-          <Card className="text-center" >
-           <Form  onSubmit={this.handleSubmit} onChange={this.handleChange} style={{ width: '18rem' }}>
+          <h1 className="text-center">Request Appointment</h1>
+          <Card className='rounded-2 mb-0 py-0 mx-auto' style={this.style}>
+           <Form  onSubmit={this.handleSubmit} className="text-center px-5 rounded-2 mb-3 py-4 mt-1 bg-light" >
              <Card.Header>Request Appointment</Card.Header>
              <Card.Body>
             <Form.Group controlId="appt">
@@ -69,8 +78,10 @@ class Request extends React.Component {
               <Form.Text className="text-muted">
                 This will help the artist determine the ammount of time needed to complete the tattoo
               </Form.Text>
-              <Form.Control type="text" name="width" placeholder="Width" onChange={this.handleChange}/>
-              <Form.Control type="text" name="height" placeholder="Height" onChange={this.handleChange}/>
+              <Form.Label>Approximate Width</Form.Label>
+              <Form.Control type="number" name="width" placeholder="width..." onChange={this.handleChange}/>
+              <Form.Label>Approximate Height</Form.Label>
+              <Form.Control type="number" name="height" placeholder="height..." onChange={this.handleChange}/>
             </Form.Group>
             <Form.Label>Number of Colors</Form.Label>
               <Form.Control onChange={this.handleChange} as="select" name="colors" custom>
@@ -82,7 +93,7 @@ class Request extends React.Component {
               </Form.Control>
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>Additional Comments</Form.Label>
-              <Form.Control as="textarea" name="comments" rows={3} />
+              <Form.Control as="textarea" name="comments" rows={3} onChange={this.handleChange}/>
             </Form.Group>
             </Card.Body>
             <Button variant="primary" type="submit">

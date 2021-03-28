@@ -39,3 +39,10 @@ export const isSignedInToFirebase = (data) => {
         data: data
     }
 }
+
+export const imageAttachmentSuccess = (data) => {
+    return {
+        type: 'IMAGE_UPLOADED_SUCCESS',
+        imageData: data
+    }
+}

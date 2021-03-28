@@ -3,10 +3,14 @@ import Card from 'react-bootstrap/Card'
 
 
 class ImageCard extends Component {
-    render() {
+  style = {
+    boxShadow: '0 30px 70px 0px rgba(0, 0, 0, 0.8)'
+  }
+  
+  render() {
          return (
- <div className="col-md-2 mt-4">
-   <Card>
+ <div className="col-md-4 mt-4 mb-4">
+   <Card style={this.style}>
      <Card.Img variant="top" src={this.props.img} />
      <Card.Body>
        <Card.Title>Card title</Card.Title>

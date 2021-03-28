@@ -6,27 +6,41 @@ import { connect } from 'react-redux';
 //import { Container } from 'semantic-ui-react'
 
 class Appointments extends React.Component {
-   componentDidMount(){
-       //fetch(`http://localhost:3000/appointments/${this.props.currentUser_Id}`)
-       // .then(resp => resp.json())
-       // .then(respData  => {
-       //     this.props.getMyAppts(respData)
-       //})
-   }
+
+  constructor(props){
+    super()
+      this.state ={
+        appts: []
+      }
+      this.getAppointments(props.currentUser_Id)
+  }
+
+  getAppointments(id){
+  fetch(`http://localhost:3000/appointments/${id}`)
+  .then(resp => resp.json())
+  .then(respData  => {
+    debugger
+      this.setState({
+        appts: respData
+      })
+      //this.props.getMyAppts(respData)
+  })
+ }
+
+  
 
    handleEdit = (e, appt) => {
-    
     this.props.history.push('/requestForm', appt)
   }
 
   renderAppts = () => {
-    if(this.props.myAppts !== undefined){
-      return this.props.myAppts.map(appt => (
-        <ApptCard edit={this.handleEdit} key={appt.id} appt={appt} name={this.props.userName} />
-       ));
-    } else {
-      return null
-    }
+   if(this.state.appts.length !== 0){
+     return this.state.appts.map(appt => (
+       <ApptCard edit={this.handleEdit} key={appt.id} images={appt.firebase_image_urls} appt={appt} name={this.props.userName} />
+      ));
+   } else {
+     return null
+   }
    
  }
  
@@ -44,11 +58,12 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => {
+
     return {
-      currentUser_Id: state.currentUser.id,
-      myAppts: state.currentUser.appointments,
-      userName: state.currentUser.username
+      currentUser_Id: state.currentUser.currentUser.id,
+      userName: state.currentUser.currentUser.username
     }
+    
   }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Appointments);

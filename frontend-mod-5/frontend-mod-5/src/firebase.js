@@ -1,4 +1,5 @@
 import firebase from 'firebase/app'
+import 'firebase/storage'
 
 
 //import 'firebase/auth'
@@ -23,7 +24,7 @@ import firebase from 'firebase/app'
  //   measurementId: process.env.FIREBASE_MEASUREMENT_ID
   };
   const fire = firebase.initializeApp(config)
-
+  export const storage = firebase.storage()
   export function authListener(){
     let userdata;
     fire.auth().onAuthStateChanged(user => {

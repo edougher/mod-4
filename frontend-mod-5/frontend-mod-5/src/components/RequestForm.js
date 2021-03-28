@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { newApptAdded } from '../actions/index'
 import { deleteAppt } from '../actions/index'
 import { connect } from 'react-redux'
@@ -12,6 +12,7 @@ class RequestForm extends Component {
   constructor(){
     super()
    this.state = {
+     photo: '',
       location: '',
       width: '',
       height: '',
@@ -78,6 +79,19 @@ class RequestForm extends Component {
          this.props.history.push('/appointments')
       })
     }
+    handleImageChange = e => {
+      if (e.target.files[0]){
+         this.state.photo = e.target.files[0]
+     }
+   }
+
+   
+
+    style = {
+      width: '500px', 
+      maxWidth: '100%',
+      boxShadow: '0 50px 70px -20px rgba(0, 0, 0, 0.8)'
+    }
 
 
     
@@ -85,9 +99,9 @@ class RequestForm extends Component {
     const { location, width, height, colors, note} = this.state
     const { id } = this.props.history.location.state
     return (
-            <div>
-            <Card className="text-center" >
-           <Form style={{ width: '22rem' }}>
+      <div className="shadow-sm border-0 px-3 rounded-2 mb-3 py-4 mx-auto mt-5 bg-light" >
+            <Card className="text-center" style={this.style}>
+           <Form className="shadow-sm border-0 px-3 rounded-2 mb-3 py-4 mx-auto mt-5 bg-light" >
              <Card.Header>Edit Request Appointment</Card.Header>
              <Card.Body>
             <Form.Group controlId="appt">
@@ -116,6 +130,10 @@ class RequestForm extends Component {
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>Additional Comments</Form.Label>
               <Form.Control onChange={this.handleChange} value={note} as="textarea" name="note" rows={3} />
+              <input type="file" name="photo" accept="image/png, image/jpeg" onChange={this.handleImageChange} />
+              <Button variant="secondary" type="click" onClick={this.uploadPhoto}>
+              upload photo
+            </Button>
             </Form.Group>
             </Card.Body>
             <Button onClick={this.handleEditForm} variant="primary" type="submit">
@@ -145,7 +163,8 @@ const mapDispatchToProps = {
 const mapStateToProps = (state) => {
     return {
       //id: state.currentUser.a
-      userName: state.currentUser.currentUser.username
+      userName: state.currentUser.currentUser.username,
+      id: state.currentUser.currentUser.id
     }
 }
 

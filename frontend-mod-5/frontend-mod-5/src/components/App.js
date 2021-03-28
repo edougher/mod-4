@@ -1,5 +1,6 @@
 import Navbar from './Navbar'
 import Home from './Home'
+import SignUp from './SignUp'
 import SignIn from './SignIn'
 import Request from './Request'
 import RequestForm from './RequestForm'
@@ -15,8 +16,9 @@ function App() {
     <Router>
     <div className="app">
     <Navbar />
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/" component={SignUp}/>
       <Route exact path="/signin" component={SignIn}/>
+      <Route exact path="/home" component={Home}/>
       <Route exact path="/appointments" component={Appointments}/>
       <Route exact path="/request" component={Request}/>
       <Route exact path="/requestForm" component={RequestForm}/>

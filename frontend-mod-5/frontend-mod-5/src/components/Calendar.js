@@ -36,6 +36,9 @@ class CalendarComponent extends React.Component {
             dateIsActive: true,
             date: moment(e).format('YYYY-MM-DD')
         })
+    //###
+    //###   this.props.location.apptInfo   
+    //###   is from the approved appt card that was clicked
     }
 
     showTimeSlots = () => {
@@ -50,9 +53,11 @@ class CalendarComponent extends React.Component {
 
     }
     
-    render() {        
+    render() {  
+              
         return (
-           <h1>Calendar</h1>,
+            <div className="card shadow-sm border-0 px-3 rounded-2 mb-3 py-4 mx-auto mt-5 bg-light" style={{width: '500px', maxWidth: '100%'}}>
+           <h1>Calendar</h1>
            <div>
            <Calendar
            style={{height: '500'}}
@@ -76,6 +81,7 @@ class CalendarComponent extends React.Component {
            :
            ''
            }
+            </div>
             </div>
         );
     }

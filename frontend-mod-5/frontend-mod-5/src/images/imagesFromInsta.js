@@ -21,14 +21,6 @@ const images = [
     
     "https://scontent-ort2-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/130197807_825674811525934_2876023171156690990_n.jpg?tp=1&_nc_ht=scontent-ort2-1.cdninstagram.com&_nc_cat=110&_nc_ohc=WRF3NlhAKKEAX9y28tS&oh=38f3956ba3aeb125f831d1848553f0ba&oe=6077BCE2",
     
-    "https://scontent-ort2-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/138527883_2650217078436723_8401014442998138608_n.jpg?tp=1&_nc_ht=scontent-ort2-1.cdninstagram.com&_nc_cat=103&_nc_ohc=jlsGuslsVxUAX-83GHC&oh=79792a3a8b8a283deff938bd5d9aab33&oe=607972AA",
-    
-    "https://scontent-ort2-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/138287608_420772066008009_635765837004816813_n.jpg?tp=1&_nc_ht=scontent-ort2-1.cdninstagram.com&_nc_cat=109&_nc_ohc=NuftUkvVCcwAX98EoAS&oh=4f0652ed5822864a6f9e14fa97ba0df0&oe=607B6312",
-    
-    "https://scontent-ort2-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/137241585_110192131004150_7892397288171540762_n.jpg?tp=1&_nc_ht=scontent-ort2-1.cdninstagram.com&_nc_cat=102&_nc_ohc=D-zTvuzFYMIAX-ZzSAZ&oh=0a9bb8a03a6e65ae2f61712e34576f91&oe=6078D3FA",
-    
-    "https://scontent-ort2-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/130197807_825674811525934_2876023171156690990_n.jpg?tp=1&_nc_ht=scontent-ort2-1.cdninstagram.com&_nc_cat=110&_nc_ohc=WRF3NlhAKKEAX9y28tS&oh=38f3956ba3aeb125f831d1848553f0ba&oe=6077BCE2",
-    
     "https://scontent-ort2-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/124340171_378923893225455_2229702459914678675_n.jpg?tp=1&_nc_ht=scontent-ort2-1.cdninstagram.com&_nc_cat=103&_nc_ohc=c5_eEsRnnegAX_HTBKP&oh=35b2c5d43c8a38467fb25a0e85cfc979&oe=607A01F8"
     ]
 

@@ -27,6 +27,12 @@ const currentUserReducer = (state=user, action) => {
             var id = parseInt(action.data, 10)
             user.appointments.filter(appt => appt.id !== id)
             return user
+        case 'IMAGE_UPLOADED_SUCCESS':
+            debugger
+                //###
+                //###    
+                //###
+            return user
         default:
             return state
     }
