@@ -19,7 +19,7 @@
 .env.production.local
 .env
 
-firebase.js
+/Users/aaron/Flatiron/react/mod-4-project/frontend-mod-5/frontend-mod-5/src/firebase.js
 
 npm-debug.log*
 yarn-debug.log*
