@@ -10,20 +10,19 @@ class Appointments extends React.Component {
   constructor(props){
     super()
       this.state ={
-        appts: []
+        appts: props.appts
       }
-      this.getAppointments(props.currentUser_Id)
+      //this.setState({appts: })
+      //this.getAppointments(props.currentUser_Id)
   }
 
   getAppointments(id){
   fetch(`http://localhost:3000/appointments/${id}`)
   .then(resp => resp.json())
   .then(respData  => {
-    debugger
       this.setState({
         appts: respData
       })
-      //this.props.getMyAppts(respData)
   })
  }
 
@@ -58,10 +57,10 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => {
-
     return {
       currentUser_Id: state.currentUser.currentUser.id,
-      userName: state.currentUser.currentUser.username
+      userName: state.currentUser.currentUser.username,
+      appts: state.currentUser.appointments
     }
     
   }

@@ -28,7 +28,6 @@ authListener = () => {
     fetch(`http://localhost:3000/user/${username}`)
      .then(resp => resp.json())
      .then(respData => {
-       debugger
        console.log(respData)
        this.props.addUserSuccess(respData)
     })

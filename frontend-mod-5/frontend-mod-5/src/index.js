@@ -5,6 +5,7 @@ import App from './components/App';
 import  { createStore } from 'redux';
 import mainReducer from './reducers/index.js'
 import 'semantic-ui-css/semantic.min.css'
+require('dotenv').config()
 //import 'react-calendar/dist/Calendar.css'
 
 

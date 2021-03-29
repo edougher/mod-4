@@ -90,6 +90,7 @@ const ApptCard = (props) => {
     {
      props.appt.status !== "pending" ?
     <Card.Content extra>
+    {props.appt.status}
     <span className='date'>Reviewed and Approved at:   {moment(props.appt.created_at).format('MMMM Do, h:mm')}</span>
     <Card.Description>Estimated Cost:   {props.appt.cost}$</Card.Description>
     <Card.Description>Duration:   {props.appt.time} hours</Card.Description>
@@ -100,18 +101,23 @@ const ApptCard = (props) => {
     }
     
     <Card.Content extra>
-    {props.appt.status === 'pending' ?
+    
+    {
+      props.appt.status === 'pending' ?
       <div> 
       <Icon name='red certificate'/>
+      {props.appt.status}
       </div> 
       : 
-      <div><Icon name='blue certificate'/>
+      <div>
+      <Icon name='blue certificate'/>
+      {props.appt.status}
       <button class="ui right floated button">
       <NavLink to={{pathname: "/calendar", apptInfo: props.appt}}>Calendar</NavLink>
       </button>
       </div>
       }
-      {props.appt.status}
+
       {props.appt.status === 'pending' ?
         <button onClick={(e) => props.edit(e, props.appt)}  class="ui right floated button">Edit</button>
         :

@@ -5,6 +5,7 @@ import 'firebase/storage'
 //import 'firebase/auth'
 //
 
+//console.log(process.env.REACT_APP_FIREBASE_API_KEY);
   const config = {
     apiKey: "AIzaSyAMCoDFYVt8ndsyn_-zFL5lfJBwCqPMIZM",
     authDomain: "tat-calendar-caf53.firebaseapp.com",
